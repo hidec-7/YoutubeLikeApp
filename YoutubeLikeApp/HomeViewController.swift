@@ -16,11 +16,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        videoListCollectionView.backgroundColor = .red
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self
         
-        videoListCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
     }
 
 
@@ -38,8 +37,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .green
+        let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
         
         return cell
     }
