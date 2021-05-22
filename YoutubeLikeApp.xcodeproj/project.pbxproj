@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D4947CE2658C8FF00771330 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947CD2658C8FF00771330 /* AppDelegate.swift */; };
 		5D4947D02658C8FF00771330 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947CF2658C8FF00771330 /* SceneDelegate.swift */; };
-		5D4947D22658C8FF00771330 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947D12658C8FF00771330 /* ViewController.swift */; };
+		5D4947D22658C8FF00771330 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947D12658C8FF00771330 /* HomeViewController.swift */; };
 		5D4947D52658C8FF00771330 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4947D32658C8FF00771330 /* Main.storyboard */; };
 		5D4947D72658C90500771330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4947D62658C90500771330 /* Assets.xcassets */; };
 		5D4947DA2658C90500771330 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4947D82658C90500771330 /* LaunchScreen.storyboard */; };
@@ -38,7 +38,7 @@
 		5D4947CA2658C8FF00771330 /* YoutubeLikeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubeLikeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4947CD2658C8FF00771330 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D4947CF2658C8FF00771330 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D4947D12658C8FF00771330 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D4947D12658C8FF00771330 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5D4947D42658C8FF00771330 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D4947D62658C90500771330 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D4947D92658C90500771330 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			children = (
 				5D4947CD2658C8FF00771330 /* AppDelegate.swift */,
 				5D4947CF2658C8FF00771330 /* SceneDelegate.swift */,
-				5D4947D12658C8FF00771330 /* ViewController.swift */,
+				5D4947D12658C8FF00771330 /* HomeViewController.swift */,
 				5D4947D32658C8FF00771330 /* Main.storyboard */,
 				5D4947D62658C90500771330 /* Assets.xcassets */,
 				5D4947D82658C90500771330 /* LaunchScreen.storyboard */,
@@ -258,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D4947D22658C8FF00771330 /* ViewController.swift in Sources */,
+				5D4947D22658C8FF00771330 /* HomeViewController.swift in Sources */,
 				5D4947CE2658C8FF00771330 /* AppDelegate.swift in Sources */,
 				5D4947D02658C8FF00771330 /* SceneDelegate.swift in Sources */,
 			);
@@ -366,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
