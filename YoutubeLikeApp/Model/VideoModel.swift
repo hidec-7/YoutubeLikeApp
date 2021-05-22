@@ -15,6 +15,7 @@ class VideoModel: Decodable {
 
 class Item: Decodable {
     
+    var channel: ChannelModel?
     let snippet: Snippet
 }
 

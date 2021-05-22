@@ -11,8 +11,9 @@ import Alamofire
 class HomeViewController: UIViewController {
     
     private let cellId = "cellId"
+    private var videoItems = [Item]()
 
-    @IBOutlet weak var videoListCollectionView: UICollectionView!
+    @IBOutlet private weak var videoListCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,11 @@ class HomeViewController: UIViewController {
         
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
         
-        let urlString = "https://www.googleapis.com/youtube/v3/search?q=iOS&key=AIzaSyDpd-0uuuiWpLLn7bUkIJT47JulWyHvt3E&part=snippet"
+        fetchYoutubeSerachInfo()
+    }
+
+    private func fetchYoutubeSerachInfo() {
+        let urlString = "https://www.googleapis.com/youtube/v3/search?q=iOSAcademy&key=AIzaSyDpd-0uuuiWpLLn7bUkIJT47JulWyHvt3E&part=snippet"
         let request = AF.request(urlString)
         
         request.responseJSON { (response) in
@@ -30,15 +35,34 @@ class HomeViewController: UIViewController {
                 guard let data = response.data else { return }
                 let decode = JSONDecoder()
                 let video = try decode.decode(VideoModel.self, from: data)
-                print("video: ", video.items.count)
+                self.videoItems = video.items
+                
+                let id = self.videoItems[0].snippet.channelId
+                self.fetchYoutubeChannelInfo(id: id)
             } catch {
                 print("変換に失敗しました。: ", error)
             }
-            print("response: ", response)
         }
     }
-
-
+    
+    private func fetchYoutubeChannelInfo(id: String) {
+        let urlString = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDpd-0uuuiWpLLn7bUkIJT47JulWyHvt3E&part=snippet&id=\(id)"
+        let request = AF.request(urlString)
+        
+        request.responseJSON { (response) in
+            do {
+                guard let data = response.data else { return }
+                let decode = JSONDecoder()
+                let channel = try decode.decode(ChannelModel.self, from: data)
+                self.videoItems.forEach { (item) in
+                    item.channel = channel
+                }
+                self.videoListCollectionView.reloadData()
+            } catch {
+                print("変換に失敗しました。: ", error)
+            }
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -49,11 +73,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return videoItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
+        cell.videoItem = videoItems[indexPath.row]
         
         return cell
     }

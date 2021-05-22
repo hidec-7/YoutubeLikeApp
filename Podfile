@@ -6,6 +6,8 @@ target 'YoutubeLikeApp' do
   use_frameworks!
 
   # Pods for YoutubeLikeApp
+  pod 'Alamofire', '~> 5.2'
+  pod 'Nuke'
 
   target 'YoutubeLikeAppTests' do
     inherit! :search_paths
@@ -15,7 +17,5 @@ target 'YoutubeLikeApp' do
   target 'YoutubeLikeAppUITests' do
     # Pods for testing
   end
-
-  pod 'Alamofire', '~> 5.2'
 
 end
