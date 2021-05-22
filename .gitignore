@@ -1,0 +1,17 @@
+# Mac OSX
+#
+.DS_Store
+
+# Xcode
+#
+xcuserdata
+DerivedData
+*.xcodeproj
+
+# Carthage
+# Carthage/Checkouts
+
+Carthage
+
+# Bundler / Ruby Gem
+vendor/
