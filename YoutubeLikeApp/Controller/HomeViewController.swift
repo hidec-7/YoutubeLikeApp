@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
     
@@ -20,6 +21,21 @@ class HomeViewController: UIViewController {
         videoListCollectionView.dataSource = self
         
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
+        
+        let urlString = "https://www.googleapis.com/youtube/v3/search?q=iOS&key=AIzaSyDpd-0uuuiWpLLn7bUkIJT47JulWyHvt3E&part=snippet"
+        let request = AF.request(urlString)
+        
+        request.responseJSON { (response) in
+            do {
+                guard let data = response.data else { return }
+                let decode = JSONDecoder()
+                let video = try decode.decode(VideoModel.self, from: data)
+                print("video: ", video.items.count)
+            } catch {
+                print("変換に失敗しました。: ", error)
+            }
+            print("response: ", response)
+        }
     }
 
 
