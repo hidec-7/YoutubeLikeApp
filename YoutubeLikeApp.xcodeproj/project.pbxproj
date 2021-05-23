@@ -139,7 +139,7 @@
 		5D4947CC2658C8FF00771330 /* YoutubeLikeApp */ = {
 			isa = PBXGroup;
 			children = (
-				5D49484A265975B400771330 /* Utility */,
+				5D49484A265975B400771330 /* Service */,
 				5D4948072658F65200771330 /* Model */,
 				5D4948002658EB8E00771330 /* Xib */,
 				5D4947FD2658EAA600771330 /* Cell */,
@@ -213,12 +213,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5D49484A265975B400771330 /* Utility */ = {
+		5D49484A265975B400771330 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				5D49484B265975CD00771330 /* APIRequest.swift */,
 			);
-			path = Utility;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		78110497E8CE64BFE49D04D8 /* Frameworks */ = {
