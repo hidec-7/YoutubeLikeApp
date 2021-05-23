@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     private var videoItems = [Item]()
 
     @IBOutlet private weak var videoListCollectionView: UICollectionView!
+    @IBOutlet private weak var profileImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +24,14 @@ class HomeViewController: UIViewController {
         
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
         
+        profileImageView.layer.cornerRadius = 20
+        
         fetchYoutubeSerachInfo()
     }
 
     private func fetchYoutubeSerachInfo() {
         let params = ["q": "iOSAcademy"]
-        APIRequest.shared.request(path: .search, params: params, type: VideoModel.self) { (video) in
+        API.shared.request(path: .search, params: params, type: VideoModel.self) { (video) in
             self.videoItems = video.items
             let id = self.videoItems[0].snippet.channelId
             self.fetchYoutubeChannelInfo(id: id)
@@ -37,7 +40,7 @@ class HomeViewController: UIViewController {
     
     private func fetchYoutubeChannelInfo(id: String) {
         let params = ["id": id]
-        APIRequest.shared.request(path: .channels, params: params, type: ChannelModel.self) { (channel) in
+        API.shared.request(path: .channels, params: params, type: ChannelModel.self) { (channel) in
             self.videoItems.forEach { (item) in
                 item.channel = channel
             }
