@@ -11,7 +11,7 @@
 		5D4947CE2658C8FF00771330 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947CD2658C8FF00771330 /* AppDelegate.swift */; };
 		5D4947D02658C8FF00771330 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947CF2658C8FF00771330 /* SceneDelegate.swift */; };
 		5D4947D22658C8FF00771330 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947D12658C8FF00771330 /* HomeViewController.swift */; };
-		5D4947D52658C8FF00771330 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4947D32658C8FF00771330 /* Main.storyboard */; };
+		5D4947D52658C8FF00771330 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4947D32658C8FF00771330 /* Home.storyboard */; };
 		5D4947D72658C90500771330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4947D62658C90500771330 /* Assets.xcassets */; };
 		5D4947DA2658C90500771330 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4947D82658C90500771330 /* LaunchScreen.storyboard */; };
 		5D4947E52658C90600771330 /* YoutubeLikeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947E42658C90600771330 /* YoutubeLikeAppTests.swift */; };
@@ -24,6 +24,10 @@
 		5D49484E265AC93D00771330 /* BaseTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D49484D265AC93D00771330 /* BaseTabBar.storyboard */; };
 		5D494850265ACB0900771330 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D49484F265ACB0900771330 /* BaseTabBarController.swift */; };
 		5D494853265AD0A300771330 /* UIImage-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D494852265AD0A300771330 /* UIImage-Extension.swift */; };
+		5D494856265BEB9F00771330 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D494855265BEB9F00771330 /* Search.storyboard */; };
+		5D494858265BEBC500771330 /* Channel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D494857265BEBC500771330 /* Channel.storyboard */; };
+		5D49485A265BEBE400771330 /* Plus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D494859265BEBE400771330 /* Plus.storyboard */; };
+		5D49485C265BEBFD00771330 /* Library.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D49485B265BEBFD00771330 /* Library.storyboard */; };
 		8549EBD284FE6348ACDDFA41 /* Pods_YoutubeLikeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71036D144B67A701D721A1E8 /* Pods_YoutubeLikeApp.framework */; };
 		A74034241D7A6D4D80ED98AF /* Pods_YoutubeLikeApp_YoutubeLikeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1D46EBA037F35903F9B24B /* Pods_YoutubeLikeApp_YoutubeLikeAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -54,7 +58,7 @@
 		5D4947CD2658C8FF00771330 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D4947CF2658C8FF00771330 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D4947D12658C8FF00771330 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		5D4947D42658C8FF00771330 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D4947D42658C8FF00771330 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		5D4947D62658C90500771330 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D4947D92658C90500771330 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D4947DB2658C90500771330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +76,10 @@
 		5D49484D265AC93D00771330 /* BaseTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseTabBar.storyboard; sourceTree = "<group>"; };
 		5D49484F265ACB0900771330 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		5D494852265AD0A300771330 /* UIImage-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Extension.swift"; sourceTree = "<group>"; };
+		5D494855265BEB9F00771330 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		5D494857265BEBC500771330 /* Channel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Channel.storyboard; sourceTree = "<group>"; };
+		5D494859265BEBE400771330 /* Plus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plus.storyboard; sourceTree = "<group>"; };
+		5D49485B265BEBFD00771330 /* Library.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Library.storyboard; sourceTree = "<group>"; };
 		71036D144B67A701D721A1E8 /* Pods_YoutubeLikeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoutubeLikeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAE6EDE009A093C45BA0E18 /* Pods-YoutubeLikeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeLikeApp.release.xcconfig"; path = "Target Support Files/Pods-YoutubeLikeApp/Pods-YoutubeLikeApp.release.xcconfig"; sourceTree = "<group>"; };
 		CA1D46EBA037F35903F9B24B /* Pods_YoutubeLikeApp_YoutubeLikeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoutubeLikeApp_YoutubeLikeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +159,7 @@
 				5D4948002658EB8E00771330 /* Xib */,
 				5D4947FD2658EAA600771330 /* Cell */,
 				5D4948052658F53200771330 /* Controller */,
+				5D494854265BEB3E00771330 /* Storyboard */,
 				5D4948062658F55B00771330 /* View */,
 				5D4947DB2658C90500771330 /* Info.plist */,
 			);
@@ -205,8 +214,6 @@
 			children = (
 				5D4947CD2658C8FF00771330 /* AppDelegate.swift */,
 				5D4947CF2658C8FF00771330 /* SceneDelegate.swift */,
-				5D49484D265AC93D00771330 /* BaseTabBar.storyboard */,
-				5D4947D32658C8FF00771330 /* Main.storyboard */,
 				5D4947D62658C90500771330 /* Assets.xcassets */,
 				5D4947D82658C90500771330 /* LaunchScreen.storyboard */,
 			);
@@ -236,6 +243,19 @@
 				5D494852265AD0A300771330 /* UIImage-Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5D494854265BEB3E00771330 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5D49484D265AC93D00771330 /* BaseTabBar.storyboard */,
+				5D4947D32658C8FF00771330 /* Home.storyboard */,
+				5D494855265BEB9F00771330 /* Search.storyboard */,
+				5D494859265BEBE400771330 /* Plus.storyboard */,
+				5D494857265BEBC500771330 /* Channel.storyboard */,
+				5D49485B265BEBFD00771330 /* Library.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		78110497E8CE64BFE49D04D8 /* Frameworks */ = {
@@ -357,10 +377,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D4947DA2658C90500771330 /* LaunchScreen.storyboard in Resources */,
+				5D494858265BEBC500771330 /* Channel.storyboard in Resources */,
+				5D49485A265BEBE400771330 /* Plus.storyboard in Resources */,
 				5D4948042658EBCB00771330 /* VideoListCell.xib in Resources */,
+				5D49485C265BEBFD00771330 /* Library.storyboard in Resources */,
 				5D4947D72658C90500771330 /* Assets.xcassets in Resources */,
 				5D49484E265AC93D00771330 /* BaseTabBar.storyboard in Resources */,
-				5D4947D52658C8FF00771330 /* Main.storyboard in Resources */,
+				5D494856265BEB9F00771330 /* Search.storyboard in Resources */,
+				5D4947D52658C8FF00771330 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,12 +556,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5D4947D32658C8FF00771330 /* Main.storyboard */ = {
+		5D4947D32658C8FF00771330 /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5D4947D42658C8FF00771330 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		5D4947D82658C90500771330 /* LaunchScreen.storyboard */ = {
