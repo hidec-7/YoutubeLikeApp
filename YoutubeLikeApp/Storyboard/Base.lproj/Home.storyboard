@@ -67,7 +67,7 @@
                                             <constraint firstAttribute="width" constant="25" id="Zfn-K4-YhY"/>
                                             <constraint firstAttribute="width" secondItem="SXX-LX-kXA" secondAttribute="height" multiplier="1:1" id="oBR-un-WWL"/>
                                         </constraints>
-                                        <state key="normal" image="search"/>
+                                        <state key="normal" image="search-icon"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rg8-Gx-ha8">
                                         <rect key="frame" x="292" y="17.5" width="25" height="25"/>
@@ -106,6 +106,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerHeightConstraint" destination="cH9-mZ-603" id="Cyf-DG-8hm"/>
+                        <outlet property="headerTopConstraint" destination="wyM-n4-ylh" id="lVD-Aq-2yT"/>
+                        <outlet property="headerView" destination="tJq-ZS-jql" id="v7g-3c-3Cg"/>
                         <outlet property="profileImageView" destination="E3G-x7-5ek" id="6zX-hF-wCG"/>
                         <outlet property="videoListCollectionView" destination="L0G-JR-AM4" id="fXX-PH-dbZ"/>
                     </connections>
@@ -119,7 +122,7 @@
         <image name="YoutubeIcon" width="1200" height="1200"/>
         <image name="icon" width="550" height="550"/>
         <image name="movie" width="48" height="48"/>
-        <image name="search" width="48" height="48"/>
+        <image name="search-icon" width="48" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="591" y="252"/>
         </scene>
-        <!--Main-->
+        <!--Home-->
         <scene sceneID="uGX-ZA-LdF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="7HE-7P-xJS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" id="7HE-7P-xJS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="JAw-tB-mOE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rW0-QH-zBh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
