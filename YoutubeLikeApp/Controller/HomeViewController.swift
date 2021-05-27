@@ -54,7 +54,32 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private func headerViewEndAnimation() {
+        if headerTopConstraint.constant < -headerHeightConstraint.constant / 2 {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: []) {
+                self.headerTopConstraint.constant = -self.headerHeightConstraint.constant
+                self.headerView.alpha = 0
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: []) {
+                self.headerTopConstraint.constant = 0
+                self.headerView.alpha = 1
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+}
+
+// MARK: - ScrollViewのDelegateメソッド
+extension HomeViewController {
+    
+    // scrollViewがscrollした時に呼ばれるメソッド
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        headerAnimation(scrollView: scrollView)
+    }
+    
+    private func headerAnimation(scrollView: UIScrollView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.prevContentOffset = scrollView.contentOffset
         }
@@ -75,33 +100,20 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // scrollViewのscrollがピタッと止まった時に呼ばれる
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             headerViewEndAnimation()
         }
     }
     
+    // scrollViewが止まった時に呼ばれる
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         headerViewEndAnimation()
     }
-    
-    private func headerViewEndAnimation() {
-        if headerTopConstraint.constant < -headerHeightConstraint.constant / 2 {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: []) {
-                self.headerTopConstraint.constant = -self.headerHeightConstraint.constant
-                self.headerView.alpha = 0
-                self.view.layoutIfNeeded()
-            }
-        } else {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: []) {
-                self.headerTopConstraint.constant = 0
-                self.headerView.alpha = 1
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
