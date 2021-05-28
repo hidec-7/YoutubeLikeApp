@@ -32,8 +32,8 @@
                                     <constraint firstAttribute="height" constant="280" id="AJz-xt-mjD"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-lF-0AH">
-                                <rect key="frame" x="0.0" y="323" width="414" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-lF-0AH">
+                                <rect key="frame" x="0.0" y="324" width="414" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vJ7-n4-5sx">
                                         <rect key="frame" x="10" y="10" width="394" height="36.5"/>
