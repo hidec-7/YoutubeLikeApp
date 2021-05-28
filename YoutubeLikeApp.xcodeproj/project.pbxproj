@@ -31,6 +31,8 @@
 		5DD9A13C265FF61E00B0619F /* AttentionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD9A13B265FF61D00B0619F /* AttentionCell.swift */; };
 		5DD9A13E265FFAF400B0619F /* AttentionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD9A13D265FFAF400B0619F /* AttentionCollectionViewCell.swift */; };
 		5DD9A140265FFB3F00B0619F /* AttentionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DD9A13F265FFB3F00B0619F /* AttentionCollectionViewCell.xib */; };
+		5DD9A1422660FDB200B0619F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD9A1412660FDB200B0619F /* VideoViewController.swift */; };
+		5DD9A1452660FDEF00B0619F /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD9A1442660FDEF00B0619F /* Video.storyboard */; };
 		8549EBD284FE6348ACDDFA41 /* Pods_YoutubeLikeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71036D144B67A701D721A1E8 /* Pods_YoutubeLikeApp.framework */; };
 		A74034241D7A6D4D80ED98AF /* Pods_YoutubeLikeApp_YoutubeLikeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1D46EBA037F35903F9B24B /* Pods_YoutubeLikeApp_YoutubeLikeAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		5DD9A13B265FF61D00B0619F /* AttentionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionCell.swift; sourceTree = "<group>"; };
 		5DD9A13D265FFAF400B0619F /* AttentionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionCollectionViewCell.swift; sourceTree = "<group>"; };
 		5DD9A13F265FFB3F00B0619F /* AttentionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionCollectionViewCell.xib; sourceTree = "<group>"; };
+		5DD9A1412660FDB200B0619F /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		5DD9A1442660FDEF00B0619F /* Video.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
 		71036D144B67A701D721A1E8 /* Pods_YoutubeLikeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoutubeLikeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAE6EDE009A093C45BA0E18 /* Pods-YoutubeLikeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeLikeApp.release.xcconfig"; path = "Target Support Files/Pods-YoutubeLikeApp/Pods-YoutubeLikeApp.release.xcconfig"; sourceTree = "<group>"; };
 		CA1D46EBA037F35903F9B24B /* Pods_YoutubeLikeApp_YoutubeLikeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoutubeLikeApp_YoutubeLikeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +218,7 @@
 			children = (
 				5D49484F265ACB0900771330 /* BaseTabBarController.swift */,
 				5D4947D12658C8FF00771330 /* HomeViewController.swift */,
+				5DD9A1412660FDB200B0619F /* VideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +262,15 @@
 		5D494854265BEB3E00771330 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				5DD9A1432660FDD200B0619F /* Tab */,
+				5DD9A1442660FDEF00B0619F /* Video.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		5DD9A1432660FDD200B0619F /* Tab */ = {
+			isa = PBXGroup;
+			children = (
 				5D49484D265AC93D00771330 /* BaseTabBar.storyboard */,
 				5D4947D32658C8FF00771330 /* Home.storyboard */,
 				5D494855265BEB9F00771330 /* Search.storyboard */,
@@ -264,7 +278,7 @@
 				5D494857265BEBC500771330 /* Channel.storyboard */,
 				5D49485B265BEBFD00771330 /* Library.storyboard */,
 			);
-			path = Storyboard;
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		78110497E8CE64BFE49D04D8 /* Frameworks */ = {
@@ -391,6 +405,7 @@
 				5DD9A140265FFB3F00B0619F /* AttentionCollectionViewCell.xib in Resources */,
 				5D4948042658EBCB00771330 /* VideoListCell.xib in Resources */,
 				5D49485C265BEBFD00771330 /* Library.storyboard in Resources */,
+				5DD9A1452660FDEF00B0619F /* Video.storyboard in Resources */,
 				5D4947D72658C90500771330 /* Assets.xcassets in Resources */,
 				5D49484E265AC93D00771330 /* BaseTabBar.storyboard in Resources */,
 				5D494856265BEB9F00771330 /* Search.storyboard in Resources */,
@@ -524,6 +539,7 @@
 			files = (
 				5D494850265ACB0900771330 /* BaseTabBarController.swift in Sources */,
 				5DD9A13C265FF61E00B0619F /* AttentionCell.swift in Sources */,
+				5DD9A1422660FDB200B0619F /* VideoViewController.swift in Sources */,
 				5DD9A13E265FFAF400B0619F /* AttentionCollectionViewCell.swift in Sources */,
 				5D4947D22658C8FF00771330 /* HomeViewController.swift in Sources */,
 				5D49484C265975CD00771330 /* APIRequest.swift in Sources */,
