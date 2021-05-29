@@ -132,7 +132,10 @@
                         <outlet property="baseBackGroundView" destination="3aP-Cy-cGO" id="AW8-K3-sQm"/>
                         <outlet property="channelImageView" destination="hfQ-to-CZZ" id="eBj-PR-2BM"/>
                         <outlet property="channelTitleLabel" destination="oqa-tk-QnF" id="2qt-s2-2kb"/>
+                        <outlet property="videoImageLeadingConstraint" destination="xYk-sk-FpI" id="DUF-qG-ghg"/>
                         <outlet property="videoImageView" destination="RaJ-mf-oe4" id="Ny8-nn-JiM"/>
+                        <outlet property="videoImageViewHeightConstraint" destination="AJz-xt-mjD" id="EYK-Zx-TnJ"/>
+                        <outlet property="videoImageViewTrainlingConstraint" destination="ogD-WC-UoR" id="C4X-XH-pgU"/>
                         <outlet property="videoTitleLabel" destination="0qr-bQ-Dzk" id="EIb-zn-WCF"/>
                     </connections>
                 </viewController>
