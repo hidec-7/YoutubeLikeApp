@@ -15,7 +15,7 @@ class VideoViewController: UIViewController {
     
     var videoImageMaxY: CGFloat {
         let ecludeValue = view.safeAreaInsets.bottom + (imageViewCenterY ?? 0)
-        return view.frame.maxX - ecludeValue
+        return view.frame.maxY - ecludeValue
     }
 
     // videoImageView
@@ -32,7 +32,7 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var backViewBottomConstraint: NSLayoutConstraint!
     
     // describeView
-    @IBOutlet weak var descraibeView: UIView!
+    @IBOutlet weak var describeView: UIView!
     @IBOutlet weak var describeViewTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var channelImageView: UIImageView!
@@ -52,6 +52,7 @@ class VideoViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.baseBackGroundView.alpha = 1
         }
+        
     }
     
     private func setupViews() {
@@ -60,10 +61,11 @@ class VideoViewController: UIViewController {
         imageViewCenterY = videoImageView.center.y
         
         channelImageView.layer.cornerRadius = 45 / 2
-
+        
         if let url = URL(string: selectedItem?.snippet.thumbnails.medium.url ?? "") {
             Nuke.loadImage(with: url, into: videoImageView)
         }
+        
         if let channelUrl = URL(string: selectedItem?.channel?.items[0].snippet.thumbnails.medium.url ?? "") {
             Nuke.loadImage(with: channelUrl, into: channelImageView)
         }
@@ -71,11 +73,12 @@ class VideoViewController: UIViewController {
         videoTitleLabel.text = selectedItem?.snippet.title
         channelTitleLabel.text = selectedItem?.channel?.items[0].snippet.title
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panVideoImageView))
-        videoImageView.addGestureRecognizer(panGesture)
+        let panGeture = UIPanGestureRecognizer(target: self, action: #selector(panVideoImageView))
+        videoImageView.addGestureRecognizer(panGeture)
     }
     
     @objc private func panVideoImageView(gesture: UIPanGestureRecognizer) {
+        
         guard let imageView = gesture.view else { return }
         let move = gesture.translation(in: imageView)
         
@@ -114,12 +117,12 @@ class VideoViewController: UIViewController {
             let bottomMoveConstant = move.y * bottomMoveRatio
             backViewBottomConstraint.constant = bottomMoveConstant
             
-            // Alpha値の設定
+            // alpha値の設定
             let alphaRatio = move.y / (parantViewHeight / 2)
-            descraibeView.alpha = 1 - alphaRatio
+            describeView.alpha = 1 - alphaRatio
             
             // imageViewの横幅の動き 150(最小値)
-            let originalWidth  = self.view.frame.width
+            let originalWidth = self.view.frame.width
             let minimumImageViewTrailingConstant = -(originalWidth - (150 + 12))
             let constant = originalWidth - move.y
             
@@ -127,14 +130,16 @@ class VideoViewController: UIViewController {
                 videoImageViewTrainlingConstraint.constant = minimumImageViewTrailingConstant
                 return
             }
+            
             if constant < -12 {
-                videoImageViewTrainlingConstraint.constant = constant            }
+                videoImageViewTrainlingConstraint.constant = constant
+            }
             
         } else if gesture.state == .ended {
-            
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: []) {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations: {
+                
                 self.backToIdentityAllViews(imageView: imageView as! UIImageView)
-            }
+            })
         }
     }
     

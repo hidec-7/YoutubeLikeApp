@@ -120,13 +120,13 @@
                             <constraint firstItem="XSs-ms-7cD" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="Jyf-ZF-4WR"/>
                             <constraint firstItem="O0R-lF-0AH" firstAttribute="leading" secondItem="XSs-ms-7cD" secondAttribute="leading" id="Lww-Yz-uhN"/>
                             <constraint firstItem="OX9-HB-brj" firstAttribute="top" secondItem="RaJ-mf-oe4" secondAttribute="top" id="N47-B0-DZG"/>
-                            <constraint firstAttribute="trailing" secondItem="3aP-Cy-cGO" secondAttribute="trailing" id="Osz-t6-Qz1"/>
+                            <constraint firstItem="3aP-Cy-cGO" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Osz-t6-Qz1"/>
                             <constraint firstItem="O0R-lF-0AH" firstAttribute="top" secondItem="RaJ-mf-oe4" secondAttribute="bottom" id="TZU-Vx-6tQ"/>
-                            <constraint firstItem="3aP-Cy-cGO" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="ZJP-dB-4gU"/>
+                            <constraint firstItem="3aP-Cy-cGO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZJP-dB-4gU"/>
                             <constraint firstItem="RaJ-mf-oe4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="een-BE-tVc"/>
                             <constraint firstItem="XSs-ms-7cD" firstAttribute="bottom" secondItem="O0R-lF-0AH" secondAttribute="bottom" id="ipY-KV-A8V"/>
                             <constraint firstAttribute="bottom" secondItem="XSs-ms-7cD" secondAttribute="bottom" id="lPa-ke-r5K"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RaJ-mf-oe4" secondAttribute="trailing" id="ogD-WC-UoR"/>
+                            <constraint firstItem="RaJ-mf-oe4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ogD-WC-UoR"/>
                             <constraint firstItem="OX9-HB-brj" firstAttribute="leading" secondItem="RaJ-mf-oe4" secondAttribute="leading" id="pEf-eV-Z0K"/>
                             <constraint firstItem="XSs-ms-7cD" firstAttribute="leading" secondItem="RaJ-mf-oe4" secondAttribute="leading" id="qAa-Ty-ntm"/>
                             <constraint firstItem="RaJ-mf-oe4" firstAttribute="bottom" secondItem="OX9-HB-brj" secondAttribute="bottom" id="sFX-I9-bkp"/>
@@ -143,7 +143,7 @@
                         <outlet property="baseBackGroundView" destination="3aP-Cy-cGO" id="AW8-K3-sQm"/>
                         <outlet property="channelImageView" destination="hfQ-to-CZZ" id="eBj-PR-2BM"/>
                         <outlet property="channelTitleLabel" destination="oqa-tk-QnF" id="2qt-s2-2kb"/>
-                        <outlet property="descraibeView" destination="O0R-lF-0AH" id="B38-AO-Ovd"/>
+                        <outlet property="describeView" destination="O0R-lF-0AH" id="Dn6-y7-ZwY"/>
                         <outlet property="describeViewTopConstraint" destination="TZU-Vx-6tQ" id="El5-0x-Ncg"/>
                         <outlet property="videoImageBackView" destination="OX9-HB-brj" id="y53-3H-2lS"/>
                         <outlet property="videoImageLeadingConstraint" destination="xYk-sk-FpI" id="DUF-qG-ghg"/>
