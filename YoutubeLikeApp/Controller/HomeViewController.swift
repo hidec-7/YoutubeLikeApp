@@ -22,12 +22,23 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var headerView: UIView!
     @IBOutlet private weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var headerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomVideoImageView: UIImageView!
+    @IBOutlet weak var bottomVideView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         setupViews()
         fetchYoutubeSerachInfo()
+        NotificationCenter.default.addObserver(self, selector: #selector(showThumbnailImage), name: .init("thumbnailImage"), object: nil)
+    }
+    
+    @objc private func showThumbnailImage(notification: NSNotification) {
+        guard let userInfo = notification.userInfo as? [String: UIImage] else { return }
+        let image = userInfo["image"]
+        
+        bottomVideView.isHidden = false
+        bottomVideoImageView.image = image
     }
     
     private func setupViews() {
@@ -38,6 +49,8 @@ class HomeViewController: UIViewController {
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
         
         profileImageView.layer.cornerRadius = 20
+        
+        bottomVideView.isHidden = true
     }
 
     private func fetchYoutubeSerachInfo() {
@@ -123,8 +136,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let videoViewController = UIStoryboard(name: "Video", bundle: nil).instantiateViewController(identifier: "VideoViewController") as VideoViewController
-        videoViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1] : videoItems[indexPath.row]
         
+        if videoItems.count == 0 {
+            videoViewController.selectedItem = nil
+        } else {
+            videoViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1] : videoItems[indexPath.row]
+        }
+        
+        bottomVideView.isHidden = true
         self.present(videoViewController, animated: true, completion: nil)
     }
     
