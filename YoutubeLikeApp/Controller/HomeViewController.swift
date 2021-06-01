@@ -35,6 +35,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var bottomVideoViewBottom: NSLayoutConstraint!
     @IBOutlet weak var bottomVideoImageWidth: NSLayoutConstraint!
     @IBOutlet weak var bottomVideoImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var bottomSubscribeView: UIView!
+    @IBOutlet weak var bottomCloseButton: UIButton!
+    @IBOutlet weak var bottomVideoTitleLabel: UILabel!
+    @IBOutlet weak var bottomVideoDescribeLabel: UILabel!
     
     // MARK: LifeCycle Methods
     override func viewDidLoad() {
@@ -48,11 +52,17 @@ class HomeViewController: UIViewController {
     
     // MARK: Methods
     @objc private func showThumbnailImage(notification: NSNotification) {
-        guard let userInfo = notification.userInfo as? [String: UIImage] else { return }
+        guard let userInfo = notification.userInfo as? [String: Any] else { return }
         let image = userInfo["image"]
+        let videoImageMinY = userInfo["videoImageMinY"] as? CGFloat ?? 0
+        let diffBottomConstant = videoImageMinY - self.bottomVideoView.frame.minY
         
+        bottomVideoViewBottom.constant -= diffBottomConstant
+        bottomSubscribeView.isHidden = false
         bottomVideoView.isHidden = false
-        bottomVideoImageView.image = image
+        bottomVideoImageView.image = image as! UIImage
+        bottomVideoTitleLabel.text = self.selectedItem?.snippet.title
+        bottomVideoDescribeLabel.text = self.selectedItem?.snippet.description
     }
     
     private func setupViews() {
@@ -216,6 +226,7 @@ extension HomeViewController {
     
     @objc private func tapBottomVideoView() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: []) {
+            self.bottomSubscribeView.isHidden = true
             self.bottomVideViewExpandAnimation()
         } completion: { _ in
             let videoViewController = UIStoryboard(name: "Video", bundle: nil).instantiateViewController(identifier: "VideoViewController") as VideoViewController
