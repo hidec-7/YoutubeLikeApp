@@ -25,20 +25,21 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var headerView: UIView!
     @IBOutlet private weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var headerTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomVideoImageView: UIImageView!
-    @IBOutlet weak var bottomVideoView: UIView!
+    @IBOutlet private weak var bottomVideoImageView: UIImageView!
+    @IBOutlet private weak var bottomVideoView: UIView!
+    @IBOutlet private weak var searchButton: UIButton!
     
     // bottomImageViewの制約
-    @IBOutlet weak var bottomVideoViewTrailing: NSLayoutConstraint!
-    @IBOutlet weak var bottomVideoViewLeading: NSLayoutConstraint!
-    @IBOutlet weak var bottomVideoViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var bottomVideoViewBottom: NSLayoutConstraint!
-    @IBOutlet weak var bottomVideoImageWidth: NSLayoutConstraint!
-    @IBOutlet weak var bottomVideoImageHeight: NSLayoutConstraint!
-    @IBOutlet weak var bottomSubscribeView: UIView!
-    @IBOutlet weak var bottomCloseButton: UIButton!
-    @IBOutlet weak var bottomVideoTitleLabel: UILabel!
-    @IBOutlet weak var bottomVideoDescribeLabel: UILabel!
+    @IBOutlet private weak var bottomVideoViewTrailing: NSLayoutConstraint!
+    @IBOutlet private weak var bottomVideoViewLeading: NSLayoutConstraint!
+    @IBOutlet private weak var bottomVideoViewHeight: NSLayoutConstraint!
+    @IBOutlet private weak var bottomVideoViewBottom: NSLayoutConstraint!
+    @IBOutlet private weak var bottomVideoImageWidth: NSLayoutConstraint!
+    @IBOutlet private weak var bottomVideoImageHeight: NSLayoutConstraint!
+    @IBOutlet private weak var bottomSubscribeView: UIView!
+    @IBOutlet private weak var bottomCloseButton: UIButton!
+    @IBOutlet private weak var bottomVideoTitleLabel: UILabel!
+    @IBOutlet private weak var bottomVideoDescribeLabel: UILabel!
     
     // MARK: LifeCycle Methods
     override func viewDidLoad() {
@@ -52,15 +53,15 @@ class HomeViewController: UIViewController {
     
     // MARK: Methods
     @objc private func showThumbnailImage(notification: NSNotification) {
-        guard let userInfo = notification.userInfo as? [String: Any] else { return }
-        let image = userInfo["image"]
-        let videoImageMinY = userInfo["videoImageMinY"] as? CGFloat ?? 0
+        guard let userInfo = notification.userInfo as? [String: Any],
+              let image = userInfo["image"] as? UIImage,
+              let videoImageMinY = userInfo["videoImageMinY"] as? CGFloat else { return }
         let diffBottomConstant = videoImageMinY - self.bottomVideoView.frame.minY
         
         bottomVideoViewBottom.constant -= diffBottomConstant
         bottomSubscribeView.isHidden = false
         bottomVideoView.isHidden = false
-        bottomVideoImageView.image = image as! UIImage
+        bottomVideoImageView.image = image
         bottomVideoTitleLabel.text = self.selectedItem?.snippet.title
         bottomVideoDescribeLabel.text = self.selectedItem?.snippet.description
     }
@@ -76,6 +77,25 @@ class HomeViewController: UIViewController {
         
         view.bringSubviewToFront(bottomVideoView)
         bottomVideoView.isHidden = true
+        
+        bottomCloseButton.addTarget(self, action: #selector(tappedCottomCloseButton), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
+    }
+    
+    @objc private func tappedCottomCloseButton() {
+        UIView.animate(withDuration: 0.2) {
+            self.bottomVideoViewBottom.constant = -150
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            self.bottomVideoView.isHidden = true
+            self.selectedItem = nil
+        }
+    }
+    
+    @objc private func tappedSearchButton() {
+        let searchController = SearchViewController()
+        let nav = UINavigationController(rootViewController: searchController)
+        self.present(nav, animated: true, completion: nil)
     }
 }
 

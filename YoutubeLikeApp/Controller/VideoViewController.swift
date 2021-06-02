@@ -129,7 +129,7 @@ class VideoViewController: UIViewController {
     
     private func adjustHeightChange(move: CGPoint) {
         let parantViewHeight = self.view.frame.height
-        let heightRatio = 210 / (parantViewHeight - (parantViewHeight / 6))
+        let heightRatio = 210 / videoImageMaxY
         let moveHeight = move.y * heightRatio
         
         backViewTopConstraint.constant = move.y
