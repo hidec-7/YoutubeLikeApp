@@ -180,6 +180,7 @@
                         <outlet property="headerTopConstraint" destination="wyM-n4-ylh" id="lVD-Aq-2yT"/>
                         <outlet property="headerView" destination="tJq-ZS-jql" id="v7g-3c-3Cg"/>
                         <outlet property="profileImageView" destination="E3G-x7-5ek" id="6zX-hF-wCG"/>
+                        <outlet property="searchButton" destination="SXX-LX-kXA" id="QPR-ak-HK1"/>
                         <outlet property="videoListCollectionView" destination="L0G-JR-AM4" id="fXX-PH-dbZ"/>
                     </connections>
                 </viewController>
