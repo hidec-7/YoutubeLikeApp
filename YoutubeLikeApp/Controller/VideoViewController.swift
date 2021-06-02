@@ -178,7 +178,7 @@ class VideoViewController: UIViewController {
                     self.videoImageBackView.isHidden = true
                     
                     let image = self.videoImageView.image
-                    let userInfo: [String: Any] = ["image": image, "videoImageMinY": self.videoImageView.frame.minY]
+                    let userInfo: [String: Any] = ["image": image as Any, "videoImageMinY": self.videoImageView.frame.minY]
                     
                     NotificationCenter.default.post(name: .init("thumbnailImage"), object: nil, userInfo: userInfo as [AnyHashable : Any])
                     
@@ -207,6 +207,7 @@ class VideoViewController: UIViewController {
     private func backToIdentityAllViews(imageView: UIImageView) {
         // imageViewの設定
         imageView.transform = .identity
+        videoImageBackView.transform = .identity
         videoImageViewHeightConstraint.constant = 280
         videoImageLeadingConstraint.constant = 0
         videoImageViewTrainlingConstraint.constant = 0
