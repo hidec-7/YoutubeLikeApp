@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     private let cellId = "cellId"
     private let atentionCellId = "atentionCellId"
     private var videoItems = [Item]()
-    private var selectedItem: Item?
+    var selectedItem: Item?
 
     // MARK: IBOutlets
     @IBOutlet private weak var videoListCollectionView: UICollectionView!
@@ -48,10 +48,15 @@ class HomeViewController: UIViewController {
         setupViews()
         fetchYoutubeSerachInfo()
         setupGestureRecognizer()
-        NotificationCenter.default.addObserver(self, selector: #selector(showThumbnailImage), name: .init("thumbnailImage"), object: nil)
+        setupNotification()
     }
     
     // MARK: Methods
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showThumbnailImage), name: .init("thumbnailImage"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showSearchedItem), name: .init("searchedItem"), object: nil)
+    }
+    
     @objc private func showThumbnailImage(notification: NSNotification) {
         guard let userInfo = notification.userInfo as? [String: Any],
               let image = userInfo["image"] as? UIImage,
@@ -64,6 +69,15 @@ class HomeViewController: UIViewController {
         bottomVideoImageView.image = image
         bottomVideoTitleLabel.text = self.selectedItem?.snippet.title
         bottomVideoDescribeLabel.text = self.selectedItem?.snippet.description
+    }
+    
+    @objc private func showSearchedItem() {
+        let videoViewController = UIStoryboard(name: "Video", bundle: nil).instantiateViewController(identifier: "VideoViewController") as VideoViewController
+        
+        videoViewController.selectedItem = self.selectedItem
+        
+        bottomVideoView.isHidden = true
+        self.present(videoViewController, animated: true, completion: nil)
     }
     
     private func setupViews() {
